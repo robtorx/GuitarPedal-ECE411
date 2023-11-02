@@ -2137,8 +2137,8 @@
     (uuid 8e68028a-eced-4c67-b8c4-ba19fc31c3e5)
   )
 
-  (text_box "Notes:\n- Moved LED (originally wired to PWM out pin on ATMega chip),\n  now wired to bypass 3PDT switch and toggles based on analog input\n- Added bypass circuitry via 3PDT switch\n  (symbol is included in Git as 3pdt.lib, need to rename pinouts)\n- Changed output buffer resistor/capacitor values"
-    (at 318.77 78.74 0) (size 59.69 21.59)
+  (text_box "Notes:\n- Moved LED (originally wired to PWM out pin on ATMega chip),\n  now wired to bypass 3PDT switch and toggles based on analog input\n- Added bypass circuitry via 3PDT switch\n  (symbol is included in Git as 3pdt.lib, need to rename pinouts)\n- Changed output buffer resistor/capacitor values\nTo-do:\n- Add footprints to all components\n- Reorganize input/output buffer stages & bypass circuitry to improve readability\n"
+    (at 318.77 71.12 0) (size 59.69 29.21)
     (stroke (width 0) (type default))
     (fill (type none))
     (effects (font (size 1.27 1.27)) (justify left top))
@@ -2188,7 +2188,7 @@
     (pin "1" (uuid d34d7233-3be6-45db-b499-b454e1f6bc2c))
     (pin "2" (uuid fde1a6cc-4966-4d7f-9c36-ac4106efbb4d))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "Y1") (unit 1)
         )
@@ -2214,7 +2214,7 @@
     (pin "1" (uuid b2ea9a75-1115-4feb-b85a-13278764ed09))
     (pin "2" (uuid c3b101cb-11cb-4d95-a379-19433f322c48))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R9") (unit 1)
         )
@@ -2239,7 +2239,7 @@
     )
     (pin "1" (uuid 0e1dc8c9-c9ad-49b3-a879-31294bcd4362))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR027") (unit 1)
         )
@@ -2265,7 +2265,7 @@
     (pin "1" (uuid 66d57462-bbb2-49ba-bee4-64fde4e5568f))
     (pin "2" (uuid 2c4136b4-2c22-4be8-823f-462d0c29f6ed))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C2") (unit 1)
         )
@@ -2290,7 +2290,7 @@
     )
     (pin "1" (uuid d4d459f8-169c-48ed-b578-5b5b82b07cea))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR016") (unit 1)
         )
@@ -2317,7 +2317,7 @@
     (pin "2" (uuid ef4d63bc-87c6-47ae-a67a-7cf588345cf9))
     (pin "3" (uuid 9f676988-792f-4cd0-a45b-52663346643d))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "U2") (unit 1)
         )
@@ -2342,7 +2342,7 @@
     )
     (pin "1" (uuid 0d337328-2f26-47a3-8d63-114df340e29b))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR023") (unit 1)
         )
@@ -2367,7 +2367,7 @@
     )
     (pin "1" (uuid 63e44cda-a905-4fbb-b913-fcb932ddc998))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR013") (unit 1)
         )
@@ -2393,7 +2393,7 @@
     (pin "1" (uuid 61234e4a-ca02-42f5-8045-137c95a6f772))
     (pin "2" (uuid d15e61a1-2028-4732-90dd-24de4488563d))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C10") (unit 1)
         )
@@ -2419,7 +2419,7 @@
     (pin "1" (uuid 2061f59b-fa4e-47fd-8351-762b1590a21a))
     (pin "2" (uuid f6321e2b-2bae-434c-b7fb-65a2a023d347))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C14") (unit 1)
         )
@@ -2444,7 +2444,7 @@
     )
     (pin "1" (uuid 7e07ebbe-32fd-446a-a06e-dfb4acbbb724))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR011") (unit 1)
         )
@@ -2469,7 +2469,7 @@
     )
     (pin "1" (uuid 06b22ffe-b3a1-4d6f-81eb-397864e3cf88))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR012") (unit 1)
         )
@@ -2495,7 +2495,7 @@
     (pin "1" (uuid 5c174ffc-0c7e-41e8-8a34-70c30bf76489))
     (pin "2" (uuid dd0aa37d-6135-4189-895a-69ff0c01ae12))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "SW1") (unit 1)
         )
@@ -2520,7 +2520,7 @@
     )
     (pin "1" (uuid 22b7e4db-cd2c-45fa-a928-2cfb16df542d))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR010") (unit 1)
         )
@@ -2546,7 +2546,7 @@
     (pin "1" (uuid 77f079bf-f178-45e8-8c28-da08ecbb143c))
     (pin "2" (uuid 12ad9508-e9ab-494a-8307-81227f77a0a4))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C7") (unit 1)
         )
@@ -2572,7 +2572,7 @@
     (pin "1" (uuid 6ac77fae-0d8e-41f3-8c3a-327b766399c7))
     (pin "2" (uuid caa50ad0-4df0-40de-9882-a61b3845537a))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C1") (unit 1)
         )
@@ -2599,7 +2599,7 @@
     (pin "2" (uuid 5860c173-27a5-4ee0-9b5d-e58ed3af7483))
     (pin "3" (uuid 71d8c90d-5eb0-42b5-bb53-ace5bc6ff4f8))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "RV1") (unit 1)
         )
@@ -2625,7 +2625,7 @@
     (pin "1" (uuid 20babffc-da10-4102-aa48-804e2c322bd4))
     (pin "2" (uuid c2039a56-8856-4bc9-9f39-e3fd6a9e01b1))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C4") (unit 1)
         )
@@ -2651,7 +2651,7 @@
     (pin "1" (uuid 9acc949f-a132-4da3-a784-daad07cedab7))
     (pin "2" (uuid 52c61766-f105-4d68-b38a-1ab7b2121eaf))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C5") (unit 1)
         )
@@ -2676,7 +2676,7 @@
     )
     (pin "1" (uuid 63e5131e-f00c-4927-83f2-236ffb8549c0))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR02") (unit 1)
         )
@@ -2701,7 +2701,7 @@
     )
     (pin "1" (uuid a68b5703-2a92-4245-8d23-762b17bf9b86))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR025") (unit 1)
         )
@@ -2727,7 +2727,7 @@
     (pin "1" (uuid 493f5a9e-c4c8-4b9f-91d8-340b9c3a3481))
     (pin "2" (uuid bfc1b9a1-2338-4047-9995-c2660b333495))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R8") (unit 1)
         )
@@ -2753,7 +2753,7 @@
     (pin "1" (uuid e40676f0-fae8-4cf2-adc8-8908fec80dda))
     (pin "2" (uuid eece98cb-f364-4095-95cb-e4579fee920f))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R10") (unit 1)
         )
@@ -2779,7 +2779,7 @@
     (pin "1" (uuid e61b4702-2040-4642-b479-35b76626dcfa))
     (pin "2" (uuid 77602a7d-b55f-4718-b8c0-6373c8e7288d))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C9") (unit 1)
         )
@@ -2805,7 +2805,7 @@
     (pin "1" (uuid 683cdc5f-3e43-4298-920b-7c7c51231128))
     (pin "2" (uuid f848f9b8-b8bf-4118-86ff-09d62b598df7))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C6") (unit 1)
         )
@@ -2831,7 +2831,7 @@
     (pin "1" (uuid a4c2a84a-e265-4c24-82ae-239a81c69ea2))
     (pin "2" (uuid 8d082136-fdd9-4c91-90c7-46d7854482df))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C13") (unit 1)
         )
@@ -2854,17 +2854,17 @@
     (property "Datasheet" "" (at 210.82 86.36 0)
       (effects (font (size 1.524 1.524)))
     )
-    (pin "1" (uuid 6726d1d6-7af4-42dc-90b9-3ff36d3616c3))
-    (pin "1" (uuid 6726d1d6-7af4-42dc-90b9-3ff36d3616c3))
-    (pin "1" (uuid 6726d1d6-7af4-42dc-90b9-3ff36d3616c3))
-    (pin "2" (uuid 439da006-27a1-47d0-b6c2-a60ab757cb7e))
-    (pin "2" (uuid 439da006-27a1-47d0-b6c2-a60ab757cb7e))
-    (pin "2" (uuid 439da006-27a1-47d0-b6c2-a60ab757cb7e))
-    (pin "3" (uuid 5d8c6bf8-2861-4c44-903c-c6de37fd5fb3))
-    (pin "3" (uuid 5d8c6bf8-2861-4c44-903c-c6de37fd5fb3))
-    (pin "3" (uuid 5d8c6bf8-2861-4c44-903c-c6de37fd5fb3))
+    (pin "1" (uuid 6726d1d6-7af4-42dc-90b9-3ff36d3616c7))
+    (pin "1" (uuid 6726d1d6-7af4-42dc-90b9-3ff36d3616c7))
+    (pin "1" (uuid 6726d1d6-7af4-42dc-90b9-3ff36d3616c7))
+    (pin "2" (uuid 439da006-27a1-47d0-b6c2-a60ab757cb82))
+    (pin "2" (uuid 439da006-27a1-47d0-b6c2-a60ab757cb82))
+    (pin "2" (uuid 439da006-27a1-47d0-b6c2-a60ab757cb82))
+    (pin "3" (uuid 5d8c6bf8-2861-4c44-903c-c6de37fd5fb7))
+    (pin "3" (uuid 5d8c6bf8-2861-4c44-903c-c6de37fd5fb7))
+    (pin "3" (uuid 5d8c6bf8-2861-4c44-903c-c6de37fd5fb7))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "SW2") (unit 1)
         )
@@ -2896,7 +2896,7 @@
     (pin "7" (uuid bbfb99fa-38d2-4601-870d-0db71d47a178))
     (pin "8" (uuid c207edeb-1b0e-4a82-a0da-25f121d99c06))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "U4") (unit 1)
         )
@@ -2928,7 +2928,7 @@
     (pin "7" (uuid 428ab7dc-b7d9-42b4-b2f8-4a8203933a8b))
     (pin "8" (uuid a7ff90e6-4c4d-4e54-9ba0-4219dfbcb51d))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "U3") (unit 1)
         )
@@ -2954,7 +2954,7 @@
     (pin "1" (uuid b1e75650-5438-4c69-98d9-0defd9bd2a18))
     (pin "2" (uuid cc043bb7-bcce-4348-af38-7e9961efd81b))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C3") (unit 1)
         )
@@ -2983,7 +2983,7 @@
     (pin "1" (uuid 72936683-5d33-4eb6-b8c7-c78a84c93d53))
     (pin "2" (uuid dd747997-9ebf-4462-99c6-aa5ef177bb6c))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R4") (unit 1)
         )
@@ -3000,7 +3000,7 @@
     (property "Value" "AVR-ISP-6" (at 115.57 90.17 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 118.11 88.9 90)
+    (property "Footprint" "User:AVR-ISP-6" (at 118.11 88.9 90)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" " ~" (at 92.075 104.14 0)
@@ -3013,7 +3013,7 @@
     (pin "5" (uuid 7e27a9c1-e9c6-4ffb-80e5-5fbf6007f7f7))
     (pin "6" (uuid 3612eee3-0e68-4313-bea1-91b0cd6da42c))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "J3") (unit 1)
         )
@@ -3039,7 +3039,7 @@
     (pin "1" (uuid c9f6ae9b-2747-4dd3-adb3-b6333976b446))
     (pin "2" (uuid 87843ae1-7255-4b41-ae33-c6f041950f27))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C12") (unit 1)
         )
@@ -3064,7 +3064,7 @@
     )
     (pin "1" (uuid b52fa1ab-f6f7-44e9-9203-c9ad98685e0e))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR06") (unit 1)
         )
@@ -3090,7 +3090,7 @@
     (pin "1" (uuid 1884a550-9f16-4b82-872e-9b82f17a89a4))
     (pin "2" (uuid ca3ba47f-b1ce-4e54-9746-a4e36210fff3))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C11") (unit 1)
         )
@@ -3115,7 +3115,7 @@
     )
     (pin "1" (uuid 6610e483-e20e-42df-9602-94171a5bcb86))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR014") (unit 1)
         )
@@ -3140,7 +3140,7 @@
     )
     (pin "1" (uuid 5d1bf8cd-9f02-4ea2-83be-d7ed51b3c4f9))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR03") (unit 1)
         )
@@ -3165,7 +3165,7 @@
     )
     (pin "1" (uuid 5c87a063-1408-46e1-9ab5-d161458f55aa))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR021") (unit 1)
         )
@@ -3191,7 +3191,7 @@
     (pin "1" (uuid a3dd94e2-0532-464c-84e5-dc0d50fbce3b))
     (pin "2" (uuid 35528b67-ee4f-40f5-8437-ff250fb90188))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "BT1") (unit 1)
         )
@@ -3216,7 +3216,7 @@
     )
     (pin "1" (uuid 227bf268-eada-48de-b167-a6a1703d1fb5))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR019") (unit 1)
         )
@@ -3241,7 +3241,7 @@
     )
     (pin "1" (uuid ce015f2a-fa84-4cb0-9519-8c9afc548771))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR022") (unit 1)
         )
@@ -3267,7 +3267,7 @@
     (pin "1" (uuid dba3de46-3cc9-448d-8dd6-9871cbabb55a))
     (pin "2" (uuid eabc7aec-4f6e-4276-8fda-bee16a0918c9))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R3") (unit 1)
         )
@@ -3293,7 +3293,7 @@
     (pin "1" (uuid 11fc15fa-b606-4d03-b158-e2e77d3fa7a5))
     (pin "2" (uuid c34f3438-478e-4ddd-ae68-80af2156d0fa))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R6") (unit 1)
         )
@@ -3319,7 +3319,7 @@
     (pin "1" (uuid 7a8e1d0b-def9-47fc-9633-a33a577ac781))
     (pin "2" (uuid c02e8f7c-c628-4014-85cc-1e6c6452a08a))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R1") (unit 1)
         )
@@ -3344,7 +3344,7 @@
     )
     (pin "1" (uuid 982e4a4d-d207-4d36-adfe-117f935b48e8))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR015") (unit 1)
         )
@@ -3370,7 +3370,7 @@
     (pin "1" (uuid e5b7532f-fa44-405c-a029-68d61489cdb6))
     (pin "2" (uuid 6c4bafde-4f1f-4497-9cfc-3adece3cd86b))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "D2") (unit 1)
         )
@@ -3395,7 +3395,7 @@
     )
     (pin "1" (uuid 6b27686c-4097-46ba-9acf-a0ceaa4d4f28))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR09") (unit 1)
         )
@@ -3425,7 +3425,7 @@
     (pin "T" (uuid dddf5f31-0382-425a-95db-cd5405a09e6c))
     (pin "TN" (uuid 92969ead-27ea-4174-936a-9f54eb7eb489))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "J2") (unit 1)
         )
@@ -3450,7 +3450,7 @@
     )
     (pin "1" (uuid 779af288-529b-4859-9ca8-fda36cf78c8e))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR017") (unit 1)
         )
@@ -3475,7 +3475,7 @@
     )
     (pin "1" (uuid 301aed51-6d3a-44ef-823b-7a6d47f46246))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR04") (unit 1)
         )
@@ -3501,7 +3501,7 @@
     (pin "1" (uuid a0be4f23-2e8e-40b9-a6cb-5224d644d4ec))
     (pin "2" (uuid b5011a17-974f-4f3a-9f73-6f34042a8d0b))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R5") (unit 1)
         )
@@ -3526,7 +3526,7 @@
     )
     (pin "1" (uuid a577bc05-2ee2-4d6f-8c14-e26d452f03a2))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR05") (unit 1)
         )
@@ -3590,7 +3590,7 @@
     (pin "8" (uuid d6108149-c053-4934-bc6e-432e9d743c17))
     (pin "9" (uuid 98aab002-b593-47f6-bb61-5a3998e3c9cb))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "U1") (unit 1)
         )
@@ -3615,7 +3615,7 @@
     )
     (pin "1" (uuid fecc1c14-7dfd-48eb-976f-fb3c6bec41b9))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR020") (unit 1)
         )
@@ -3640,7 +3640,7 @@
     )
     (pin "1" (uuid 491e0ab8-8ff3-44ab-80ed-57413f8fc2b0))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR018") (unit 1)
         )
@@ -3665,7 +3665,7 @@
     )
     (pin "1" (uuid 60d58679-97e7-4079-ad05-c9376314bd21))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR026") (unit 1)
         )
@@ -3690,7 +3690,7 @@
     )
     (pin "1" (uuid 5e438dd0-f464-411e-a291-2685945012e5))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR08") (unit 1)
         )
@@ -3716,7 +3716,7 @@
     (pin "1" (uuid 52db5a3b-d121-4e0c-ab60-8819dabf21a3))
     (pin "2" (uuid 560b376a-a33c-4cb6-a507-c19bce61e67c))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R7") (unit 1)
         )
@@ -3741,7 +3741,7 @@
     )
     (pin "1" (uuid 9ef19337-60da-430f-9576-2c4390c2414c))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR07") (unit 1)
         )
@@ -3767,7 +3767,7 @@
     (pin "1" (uuid 65d761a3-fe1b-4c44-9075-f2f8e272df63))
     (pin "2" (uuid f7155b51-98ad-40b0-b8d6-bb777018cb43))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "C8") (unit 1)
         )
@@ -3797,7 +3797,7 @@
     (pin "T" (uuid 197bab40-6587-497f-bf82-a5e6ff1a56d3))
     (pin "TN" (uuid 00b58a42-0f78-47b9-a55d-c9cafd61fa86))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "J1") (unit 1)
         )
@@ -3823,7 +3823,7 @@
     (pin "1" (uuid b125c9c2-61ca-4678-a469-da7993c2dc63))
     (pin "2" (uuid f04952d5-1cf8-465f-909f-9ac973474813))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R2") (unit 1)
         )
@@ -3848,7 +3848,7 @@
     )
     (pin "1" (uuid ac2f2fea-3f08-470d-93cc-c7ff7da76802))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR01") (unit 1)
         )
@@ -3865,7 +3865,7 @@
     (property "Value" "RED" (at 370.84 134.9375 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "" (at 367.03 132.08 0)
+    (property "Footprint" "LED_THT:LED_D3.0mm" (at 367.03 132.08 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 367.03 132.08 0)
@@ -3874,7 +3874,7 @@
     (pin "1" (uuid bfbe7f65-5884-4288-9aff-de3c83806037))
     (pin "2" (uuid 783de9ff-a141-439a-8560-9dfd1cd9630a))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "D1") (unit 1)
         )
@@ -3899,7 +3899,7 @@
     )
     (pin "1" (uuid be794db1-2590-4e32-b63b-89f00a51e88d))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "#PWR024") (unit 1)
         )
@@ -3925,7 +3925,7 @@
     (pin "1" (uuid 760864d0-4fe5-42b4-b520-3b518d4cd9e7))
     (pin "2" (uuid 001ea619-2448-4691-9715-1c2e4ac63894))
     (instances
-      (project "guitar_pedal"
+      (project "11-1 v2"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
           (reference "R11") (unit 1)
         )
