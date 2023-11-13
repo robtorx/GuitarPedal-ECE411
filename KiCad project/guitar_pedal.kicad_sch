@@ -2231,7 +2231,7 @@
     (uuid f9a18344-c75a-431b-a41e-e40c5359262a)
   )
 
-  (text_box "Notes:\n- Split R8 to R8 and R13 (1M2 = 1M + 200K) to fit available components\n- Added footprints for op amps (using single channel SOIC 8 op amps)\n- Split C3 to C3 and C18 (0.33u ~= 220n + 100n)\n- Changed C8 from 270pF to 330pF (still approximately 5KHz cutoff)\n- Split C11 and C14 from 6.8nF into three 2.2nF (total 6.6nF) caps each\nTo-do:\n- Add pads/connectors for wire and non-trace connections"
+  (text_box "Notes:\n- Split R8 to R8 and R13 (1M2 = 1M + 200K) to fit available components\n- Added footprints for op amps (using single channel SOIC 8 op amps)\n- Split C3 to C3 and C18 (0.33u ~= 220n + 100n)\n- Changed C8 from 270pF to 330pF (still approximately 5KHz cutoff)\n- Split C11 and C14 from 6.8nF into three 2.2nF (total 6.6nF) caps each\nTo-do:\n- Add pads/connectors for potentiometer, 9V battery"
     (at 20.32 214.63 0) (size 144.78 19.05)
     (stroke (width 0) (type default))
     (fill (type none))
@@ -2489,7 +2489,7 @@
     (property "Value" "10u" (at 243.84 174.8282 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_4x5.4" (at 241.3 173.99 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (at 241.3 173.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 241.3 173.99 0)
@@ -2772,7 +2772,7 @@
     (property "Value" "10u" (at 201.93 174.8282 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_4x5.4" (at 199.39 173.99 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (at 199.39 173.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 199.39 173.99 0)
@@ -3030,7 +3030,7 @@
     (property "Value" "1u" (at 213.36 58.42 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Capacitor_SMD:C_Elec_4x5.4" (at 213.36 52.07 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric" (at 213.36 52.07 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 213.36 52.07 0)
@@ -3317,12 +3317,12 @@
     (property "Datasheet" " ~" (at 86.995 91.44 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a31fd161-e71d-40b7-b03a-83f47ac05b48))
-    (pin "2" (uuid 1948d654-cc94-4148-9aa6-e3b666360257))
-    (pin "3" (uuid fe7bd43c-a889-4284-99fe-914cee43e6d5))
-    (pin "4" (uuid 76957457-c4e7-4a17-80e0-94dd577c9485))
-    (pin "5" (uuid 7e27a9c1-e9c6-4ffb-80e5-5fbf6007f7f7))
-    (pin "6" (uuid 3612eee3-0e68-4313-bea1-91b0cd6da42c))
+    (pin "1" (uuid 83d67dbf-8c0a-4bf2-8486-04751e15ffc2))
+    (pin "2" (uuid 05862c23-f1cf-42e3-bb88-0147c50a3837))
+    (pin "3" (uuid 1e955b19-344d-4074-b487-36a1268b343e))
+    (pin "4" (uuid 04a7b395-0b1e-487e-81de-4064259fc9bb))
+    (pin "5" (uuid e7f2887d-b9fe-43de-970c-47dd88c10689))
+    (pin "6" (uuid 3e515ba2-e4ad-4eb1-baa8-289471beb143))
     (instances
       (project "guitar_pedal"
         (path "/23db8aec-b53f-46f3-9e89-875dd8c49681"
