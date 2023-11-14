@@ -2262,7 +2262,7 @@
     (uuid f9a18344-c75a-431b-a41e-e40c5359262a)
   )
 
-  (text_box "Notes:\n- Add pads/connectors for potentiometer, 9V battery\nTo-do:\n- Redraw all traces as 0.25mm/0.5 mm\n- Draw connections for battery and potentiometer\n- Add connections for +5V"
+  (text_box "Notes:\n- Add pads/connectors for potentiometer, 9V battery\n- Redraw all traces as 0.25mm/0.5 mm\n- Add connections for +5V\n- Draw connections for battery and potentiometer\nTo-do:\n- Edit silkscreen"
     (at 20.32 214.63 0) (size 144.78 19.05)
     (stroke (width 0) (type default))
     (fill (type none))
