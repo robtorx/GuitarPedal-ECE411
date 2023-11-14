@@ -48,10 +48,14 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [
-        "lib_footprint_mismatch|51802500|97067500|97dd3d8b-3ac6-499f-988e-6c1f825362c1|00000000-0000-0000-0000-000000000000"
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
       ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -165,8 +169,21 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
-      "via_dimensions": [],
+      "track_widths": [
+        0.0,
+        0.25,
+        0.5
+      ],
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 1.6,
+          "drill": 0.8
+        }
+      ],
       "zones_allow_external_fillets": false
     },
     "layer_presets": [],
