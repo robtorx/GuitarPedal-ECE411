@@ -4438,7 +4438,7 @@
     (property "Value" "RED" (at 270.51 185.7375 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "LED_SMD:LED_0603_1608Metric" (at 266.7 182.88 0)
+    (property "Footprint" "LED_THT:LED_D3.0mm" (at 266.7 182.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 266.7 182.88 0)
