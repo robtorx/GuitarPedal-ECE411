@@ -1,9 +1,3 @@
-/*
- * GuitarPedal.c
- *
- * Created: 12/1/23 12:11:54
- * Author : Ali
- */ 
 
 #ifndef F_CPU
 #define F_CPU 16000000UL    // 16MHz Clock Speed
