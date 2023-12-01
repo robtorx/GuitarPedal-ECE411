@@ -18,6 +18,7 @@
 
 // Function definitions
 long map(long x, long in_min, long in_max, long out_min, long out_max);
+void adc_setup();
 
 int main(void)
 {
@@ -69,4 +70,19 @@ ISR(TIMER1_CAPT_vect)
   if(in_ADC1>=upper_threshold) in_ADC1=upper_threshold;
   else if(in_ADC1<lower_threshold)  in_ADC1=lower_threshold;
 
+}
+
+void adc_setup()
+{
+  cli();
+  ADMUX |= (1 << REFS0);    // use AVcc as the reference
+  ADMUX |= (1 << ADLAR);    // left aligned, better for 8 bit resolution
+    
+  ADCSRA |= (1 << ADPS2) | (1 << ADPS1) | (1 << ADPS0);    // 128 prescale for 16Mhz
+  ADCSRA |= (1 << ADATE);    // Set this bit to enable trigger source
+  ADCSRB |= (1 << ADTS0) | (1 << ADTS1);   // Triggered by Timer0 compare match A
+  PRR |= (0 << PRADC);      // Power Reduction Register's PRADC bit must be disabled before starting the conversion
+  ADCSRA |= (1 << ADEN);    // Enable the ADC
+  ADCSRA |= (1 << ADIE);    // Enable Interrupts 
+  sei();
 }
