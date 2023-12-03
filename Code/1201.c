@@ -13,9 +13,10 @@
 #endif
 
 #include <avr/io.h>
-#include <util/delay.h>
+// #include <util/delay.h>
+#include <avr/interrupt.h>
 
-#define PWM_FREQ 0x00FF     // pwm frequency - 31.3KHz
+#define PWM_FREQ 0x00FF     // PWM frequency - 31.3KHz
 #define PWM_MODE 0          // Fast (1) or Phase Correct (0)
 #define PWM_QTY 2           // 2 PWMs in parallel
 
@@ -31,6 +32,8 @@ int main(void) {
     int counter = 0;
 
     cli();
+    pin_setup();
+    timer_setup();
     adc_setup();
     sei(); // Enable global interrupts
 
@@ -41,14 +44,26 @@ int main(void) {
 ////////////////////////////////////////////////////////////////////////////
 
 // ADC Conversion Complete
-ISR(ADC_vect) {
-    ADC_low = 0; // Always 0 to save space
-    ADC_high = ADCH;
-    
+ISR(TIMER1_COMPA_vect) {
+    counter++;
+
+    // Output
     input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
 
     OCR1AL = ((input + 0x8000) >> 8);       // convert to unsigned, send out high byte
     OCR1BL = input; // send out low byte    // PortD for the ATMega1284
+
+    // if (counter >= 100) {
+    //     switch_adc();
+    // }
+    
+    ADCSRA |= (1<<ADSC);    // Start next ADC conversion
+}
+
+// ADC Conversion Complete
+ISR(ADC_vect) {
+    ADC_low = 0; // Always 0 to save space
+    ADC_high = ADCH;
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -60,7 +75,23 @@ void pin_setup(void){
     DDRD |= ((1<<DDB1) | (1<<DDB2));
 }
 
-void adc_setup(void){
+void timer_setup(void) {
+    // TCNT1 = 0x00;
+    TCCR1B = (1<<WGM13) | (0<<WGM12);   // Phase correct, PWM waveform generation
+    TCCR1A = (1<<WGM11) | (0<<WGM10);   // TOP = ICR1         
+    TCCR1B = (1<<CS10);                 // CLK/1 = 16 MHz TIMER1
+    TCCR1A = (1<<COM1A1);               // Set output to low level.
+    TCCR1B = (1<<COM1B1);               //
+
+    // TCCR1A = (((PWM_QTY - 1) << 5) | 0x80 | (PWM_MODE << 1)); //
+    // TCCR1B = ((PWM_MODE << 3) | 0x11);                        // CLK/1
+
+    TIMSK1 = (1<<TICIE1);               // Enable TIMER1 capture interrupt
+    ICR1H = (PWM_FREQ >> 8);
+    ICR1L = (PWM_FREQ & 0xFF);
+}
+
+void adc_setup(void){   
     ADCSRA |= (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0);     // CLK/128 = 125 KHz ADC frequency
     ADMUX |= (0<<REFS1) | (1<<REFS0);                   // AVCC with external capacitor at AREF pin
     ADMUX |= (1<<ADLAR);                                // Left aligned for 8 bit resolution
