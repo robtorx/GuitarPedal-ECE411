@@ -47,12 +47,6 @@ int main(void) {
 ISR(TIMER1_COMPA_vect) {
     counter++;
 
-    // Output
-    input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
-
-    OCR1AL = ((input + 0x8000) >> 8);       // convert to unsigned, send out high byte
-    OCR1BL = input; // send out low byte    // PortD for the ATMega1284
-
     // if (counter >= 100) {
     //     switch_adc();
     // }
@@ -64,6 +58,13 @@ ISR(TIMER1_COMPA_vect) {
 ISR(ADC_vect) {
     ADC_low = 0; // Always 0 to save space
     ADC_high = ADCH;
+
+    // Output
+    input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
+
+    OCR1AL = ((input + 0x8000) >> 8);       // convert to unsigned, send out high byte
+    OCR1BL = input; // send out low byte    // PortD for the ATMega1284
+
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -83,12 +84,15 @@ void timer_setup(void) {
     TCCR1A = (1<<COM1A1);               // Set output to low level.
     TCCR1B = (1<<COM1B1);               //
 
-    // TCCR1A = (((PWM_QTY - 1) << 5) | 0x80 | (PWM_MODE << 1)); //
-    // TCCR1B = ((PWM_MODE << 3) | 0x11);                        // CLK/1
+    ICR1L = 0xFF;
+    ICR1H = (0xFF >> 8);                // 
 
     TIMSK1 = (1<<TICIE1);               // Enable TIMER1 capture interrupt
-    ICR1H = (PWM_FREQ >> 8);
-    ICR1L = (PWM_FREQ & 0xFF);
+   
+    // TCCR1A = (((PWM_QTY - 1) << 5) | 0x80 | (PWM_MODE << 1)); //
+    // TCCR1B = ((PWM_MODE << 3) | 0x11);                        // CLK/1
+    // ICR1H = (PWM_FREQ >> 8);             // PWM Frequency = 16 MHz/512 = 31.3 KHz
+    // ICR1L = (PWM_FREQ & 0xFF);
 }
 
 void adc_setup(void){   
@@ -115,4 +119,4 @@ long map(long x, long in_min, long in_max, long out_min, long out_max) {
 // DDRB |= (1 << DDB3);     // set pin 3 of Port B as output
 // PORTB |= (1 << PB3);     // set pin 3 of Port B high
 // PORTB &= ~(1 << PB3);    // set pin 3 of Port B low
-// PORTB ^= (1 << PB3);   // toggles the state of the bit (XOR)
+// PORTB ^= (1 << PB3);   // toggles the state of the bit (XOR)m1111111
