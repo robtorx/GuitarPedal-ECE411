@@ -15,16 +15,20 @@
  #include <avr/io.h>
 // #include <util/delay.h>
 #include <avr/interrupt.h>
+#include <stdbool.h>
 
 unsigned int ADC_low, ADC_high, POT;
 unsigned int upper_threshold, lower_threshold;
 int input;
 int counter = 0;
-bool activeADC = 0;
+_Bool activeADC = false;
 
 // Function definitions
 long map(long x, long in_min, long in_max, long out_min, long out_max);
 void switch_adc(void);
+void pin_setup();
+void timer_setup();
+void adc_setup();
 
 int main(void) {
     cli();
@@ -96,8 +100,8 @@ ISR(ADC_vect) {
 ////////////////////////////////////////////////////////////////////////////
 
 void pin_setup(void){
-    // Pins PD6 PD7 as output with PWM
-    DDRD |= ((1<<DDB6) | (1<<DDB7));
+    // Pins PD1 PD2 as output with PWM
+    DDRD |= ((1<<DDB1) | (1<<DDB2));
     // Pins PA0 PA1 as input pins
     DDRA &= ~((1<<DDB0) | (1<<DDB1));
 }
@@ -113,11 +117,11 @@ void timer_setup(void) {
     TCCR1A = (1<<COM1A1);               // Set output to low level.
     TCCR1B = (1<<COM1B1);               //
 
-    ICR1L = 0xFF                        // PWM frequency = TIMER1/(1*PRE*ICR1)
+    ICR1L = 0xFF;                        // PWM frequency = TIMER1/(1*PRE*ICR1)
                                         // PWM Resolution = log2
     // ICR1H = (0xFF >> 8);                
 
-    TIMSK1 = (1<<TICIE1);               // Enable TIMER1 capture interrupt
+    TIMSK1 = (1<<ICIE1);               // Enable TIMER1 capture interrupt
    
     // TCCR1A = (((PWM_QTY - 1) << 5) | 0x80 | (PWM_MODE << 1)); //
     // TCCR1B = ((PWM_MODE << 3) | 0x11);                        // CLK/1
@@ -130,7 +134,7 @@ void adc_setup(void){
     ADMUX |= (0<<REFS1) | (1<<REFS0);                   // AVCC with external capacitor at AREF pin
     ADMUX |= (1<<ADLAR);                                // Left aligned for 8 bit resolution
 	ADMUX |= (0<<MUX0) | (0<<MUX1) | (0<<MUX2) | (0<<MUX3) | (0<<MUX4); // Select port ADC1
-    PRR &= ~(1<<PRADC);     // Clear power reduction bit
+    PRR0 &= ~(1<<PRADC);     // Clear power reduction bit
     ADCSRA |= (1<<ADEN);    // Enable ADC
 	ADCSRA |= (1<<ADSC);    // Start first conversion
 	// SFIOR |= (0<<ADTS0) | (0<<ADTS1) | (0<<ADTS2); // Free running mode
