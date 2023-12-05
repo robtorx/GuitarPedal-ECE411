@@ -96,8 +96,8 @@ ISR(ADC_vect) {
 ////////////////////////////////////////////////////////////////////////////
 
 void pin_setup(void){
-    // Pins PD1 PD2 as output with PWM
-    DDRD |= ((1<<DDB1) | (1<<DDB2));
+    // Pins PD6 PD7 as output with PWM
+    DDRD |= ((1<<DDB6) | (1<<DDB7));
     // Pins PA0 PA1 as input pins
     DDRA &= ~((1<<DDB0) | (1<<DDB1));
 }
