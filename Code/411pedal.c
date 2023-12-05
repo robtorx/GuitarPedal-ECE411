@@ -19,6 +19,7 @@
 unsigned int ADC_low, ADC_high, POT;
 unsigned int upper_threshold, lower_threshold;
 int input;
+int counter = 0;
 bool activeADC = 0;
 
 // Function definitions
@@ -52,30 +53,42 @@ ISR(TIMER0_COMPA_vect) {
 
 // ADC Conversion Complete
 ISR(ADC_vect) {
-    if (!activeADC) {
-        ADC_low = 0; // Always 0 to save space
+    if (!activeADC) {           // Update ADC_high/low (guitar line) if active channel is ADC0
+        ADC_low = 0;            // Always 0 to save space
         ADC_high = ADCH;
-    } else if (activeADC) {
+    } else if (activeADC) {     // Update POT if active channel is ADC1
         POT = ADCH;
     }
 
+    // Determines clipping levels based on POT
     upper_threshold=map(POT,0,4095,4095,2047);
     lower_threshold=map(POT,0,4095,0000,2047);
     
+    // Clips signal based on threshholds
     if (ADC_high>=upper_threshold) {
         ADC_high=upper_threshold;
     }
     else if (ADC_high<lower_threshold) {
         ADC_high=lower_threshold;
     }
+
     // Output
     input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
 
     OCR1AL = ((input + 0x8000) >> 8);       // convert to unsigned, send out high byte
     OCR1BL = input; // send out low byte    // PortD for the ATMega1284
     
-    switch_adc();
-    ADCSRA |= (1<<ADSC);    // Start next ADC conversion
+    // Conversion takes 13 seconds -> approx. 0.1 ms per conversion at 125KHz ADC freq.
+    // Every 100 conversions = 1 ms/potentiometer reading
+    if (++counter >= 100) {
+        switch_adc();           // switch to ADC1 to read POT next conversion
+        counter = 0;            // reset counter
+    } else if (counter == 0) {
+        switch_adc();           // switch back to ADC0
+    }
+
+    counter++;
+    ADCSRA |= (1<<ADSC);        // Start next ADC conversion
 }
 
 ////////////////////////////////////////////////////////////////////////////
