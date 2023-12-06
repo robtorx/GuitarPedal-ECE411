@@ -17,11 +17,12 @@
 #include <avr/interrupt.h>
 #include <stdbool.h>
 
-unsigned int ADC_low, ADC_high, POT;
+unsigned int ADC_low, ADC_high;
+unsigned int POT0 = 0;
 unsigned int upper_threshold, lower_threshold;
 int input;
-int counter = 0;
-_Bool activeADC = false;
+// int counter = 0;
+// _Bool activeADC = false;
 
 // Function definitions
 long map(long x, long in_min, long in_max, long out_min, long out_max);
@@ -43,25 +44,45 @@ int main(void) {
 //                      Interrupt Service Routines                        //
 ////////////////////////////////////////////////////////////////////////////
 
-/**
-// Timer0 interrupt
-ISR(TIMER0_COMPA_vect) {
-    counter++;
+
+// Timer1 interrupt
+ISR(TIMER1_COMPA_vect) {
+    // counter++;
 
     // if (counter >= 100) {
     //     switch_adc();
     // }
-    
-}
-*/
 
+    ADC_low = 0;            // Always 0 to save space
+    ADC_high = ADCH;
+    
+    // Determines clipping levels based on POT
+    upper_threshold=map(POT0,0,4095,4095,2047);
+    lower_threshold=map(POT0,0,4095,0000,2047);
+    
+    // Clips signal based on threshholds
+    if (ADC_high>=upper_threshold) {
+        ADC_high=upper_threshold;
+    }
+    else if (ADC_high<lower_threshold) {
+        ADC_high=lower_threshold;
+    }
+
+    // Output
+    input = ((ADC_high << 8) | ADC_low) + 0x8000; // make a signed 16b value
+
+    OCR1AL = ((input + 0x8000) >> 8);       // convert to unsigned, send out high byte
+    OCR1BL = input; // send out low byte    // PortD for the ATMega1284   
+}
+
+/*
 // ADC Conversion Complete
 ISR(ADC_vect) {
     if (!activeADC) {           // Update ADC_high/low (guitar line) if active channel is ADC0
         ADC_low = 0;            // Always 0 to save space
         ADC_high = ADCH;
     } else if (activeADC) {     // Update POT if active channel is ADC1
-        POT = ADCH;
+        POT0 = ADCH;
     }
 
     // Determines clipping levels based on POT
@@ -94,14 +115,15 @@ ISR(ADC_vect) {
     counter++;
     ADCSRA |= (1<<ADSC);        // Start next ADC conversion
 }
+*/
 
 ////////////////////////////////////////////////////////////////////////////
 //                          HELPER FUNCTIONS                              //
 ////////////////////////////////////////////////////////////////////////////
 
 void pin_setup(void){
-    // Pins PD1 PD2 as output with PWM
-    DDRD |= ((1<<DDB1) | (1<<DDB2));
+    // Pins PD6 PD7 as output with PWM
+    DDRD |= ((1<<DDB6) | (1<<DDB7));
     // Pins PA0 PA1 as input pins
     DDRA &= ~((1<<DDB0) | (1<<DDB1));
 }
@@ -117,9 +139,9 @@ void timer_setup(void) {
     TCCR1A = (1<<COM1A1);               // Set output to low level.
     TCCR1B = (1<<COM1B1);               //
 
-    ICR1L = 0xFF;                        // PWM frequency = TIMER1/(1*PRE*ICR1)
+    ICR1L = 0xFF;                        
+    ICR1H = (0xFF >> 8);                // PWM frequency = TIMER1/(1*PRE*ICR1)
                                         // PWM Resolution = log2
-    // ICR1H = (0xFF >> 8);                
 
     TIMSK1 = (1<<ICIE1);               // Enable TIMER1 capture interrupt
    
@@ -135,9 +157,9 @@ void adc_setup(void){
     ADMUX |= (1<<ADLAR);                                // Left aligned for 8 bit resolution
 	ADMUX |= (0<<MUX0) | (0<<MUX1) | (0<<MUX2) | (0<<MUX3) | (0<<MUX4); // Select port ADC1
     PRR0 &= ~(1<<PRADC);     // Clear power reduction bit
+    SFIOR |= (0<<ADTS0) | (0<<ADTS1) | (0<<ADTS2); // Free running mode
     ADCSRA |= (1<<ADEN);    // Enable ADC
 	ADCSRA |= (1<<ADSC);    // Start first conversion
-	// SFIOR |= (0<<ADTS0) | (0<<ADTS1) | (0<<ADTS2); // Free running mode
 }
 
 // Toggles LSB of ADMUX.MUX (switches between ADC0 and ADC1)
