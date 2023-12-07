@@ -126,6 +126,8 @@ void pin_setup(void){
     DDRD |= ((1<<DDB6) | (1<<DDB7));
     // Pins PA0 PA1 as input pins
     DDRA &= ~((1<<DDB0) | (1<<DDB1));
+    DIDR0 = 0x01;   // turn off digital inputs for adc0
+
 }
 
 // Used to generate PWM signals
@@ -157,7 +159,7 @@ void adc_setup(void){
     ADMUX |= (1<<ADLAR);                                // Left aligned for 8 bit resolution
 	ADMUX |= (0<<MUX0) | (0<<MUX1) | (0<<MUX2) | (0<<MUX3) | (0<<MUX4); // Select port ADC1
     PRR0 &= ~(1<<PRADC);     // Clear power reduction bit
-    SFIOR |= (0<<ADTS0) | (0<<ADTS1) | (0<<ADTS2); // Free running mode
+    ADCSRB |= (1<<ADTS0) | (1<<ADTS1) | (1<<ADTS2); // Auto Triggered TIMER1 capture event
     ADCSRA |= (1<<ADEN);    // Enable ADC
 	ADCSRA |= (1<<ADSC);    // Start first conversion
 }
